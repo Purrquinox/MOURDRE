@@ -1,0 +1,347 @@
+@import 'tailwindcss';
+
+/* === THEME TOKENS === */
+@theme {
+	--color-primary: #9a8866;
+	--color-secondary: #678d58;
+	--color-accent: #d2b6c9;
+	--color-background: #f2f0eb;
+	--color-surface: #ffffff;
+	--color-text: #2b2b2b;
+	--color-textSecondary: #6b7280;
+	--color-border: #e5e7eb;
+
+	--font-sans: var(--font-inter), sans-serif;
+	--font-serif: var(--font-crimson), serif;
+}
+
+/* === BASE LAYER === */
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		font-feature-settings:
+			'rlig' 1,
+			'calt' 1;
+		font-family: var(--font-sans);
+		background-color: var(--color-background);
+		color: var(--color-text);
+	}
+
+	:root {
+		/* You can keep this if you want raw CSS variable access */
+		--color-primary: #9a8866;
+		--color-secondary: #678d58;
+		--color-accent: #d2b6c9;
+		--color-background: #f2f0eb;
+		--color-surface: #ffffff;
+		--color-text: #2b2b2b;
+		--color-textSecondary: #6b7280;
+		--color-border: #e5e7eb;
+	}
+}
+
+/* === UTILITIES LAYER === */
+@layer utilities {
+	/* Fonts */
+	.font-serif {
+		font-family: var(--font-serif);
+	}
+
+	.font-sans {
+		font-family: var(--font-sans);
+	}
+
+	/* Background Colors */
+	.bg-theme-primary {
+		background-color: var(--color-primary);
+	}
+	.bg-theme-secondary {
+		background-color: var(--color-secondary);
+	}
+	.bg-theme-accent {
+		background-color: var(--color-accent);
+	}
+	.bg-theme-background {
+		background-color: var(--color-background);
+	}
+	.bg-theme-surface {
+		background-color: var(--color-surface);
+	}
+	.bg-theme-text {
+		background-color: var(--color-text);
+	}
+
+	/* Text Colors */
+	.text-theme-primary {
+		color: var(--color-primary);
+	}
+	.text-theme-secondary {
+		color: var(--color-secondary);
+	}
+	.text-theme-accent {
+		color: var(--color-accent);
+	}
+	.text-theme-background {
+		color: var(--color-background);
+	}
+	.text-theme-surface {
+		color: var(--color-surface);
+	}
+	.text-theme-text {
+		color: var(--color-text);
+	}
+	.text-theme-textSecondary {
+		color: var(--color-textSecondary);
+	}
+
+	/* Border Colors */
+	.border-theme-primary {
+		border-color: var(--color-primary);
+	}
+	.border-theme-secondary {
+		border-color: var(--color-secondary);
+	}
+	.border-theme-accent {
+		border-color: var(--color-accent);
+	}
+	.border-theme-background {
+		border-color: var(--color-background);
+	}
+	.border-theme-surface {
+		border-color: var(--color-surface);
+	}
+	.border-theme-text {
+		border-color: var(--color-text);
+	}
+	.border-theme-border {
+		border-color: var(--color-border);
+	}
+
+	/* Placeholder */
+	.placeholder-theme-textSecondary::placeholder {
+		color: var(--color-textSecondary);
+	}
+
+	/* Animations */
+	.animate-loading-bar {
+		animation: loading-bar 1s ease-in-out;
+	}
+
+	.animate-float {
+		animation: float 6s ease-in-out infinite;
+	}
+
+	.animate-letter-spacing {
+		animation: letter-spacing 0.8s ease-out forwards;
+	}
+
+	.animate-fade-in-up {
+		animation: fade-in-up 0.8s ease-out;
+	}
+
+	.animate-slide-in-left {
+		animation: slide-in-left 0.6s ease-out;
+	}
+
+	.animate-slide-in-right {
+		animation: slide-in-right 0.6s ease-out;
+	}
+
+	.animate-slide-in-up {
+		animation: slide-in-up 0.5s ease-out;
+	}
+
+	.animate-spin-slow {
+		animation: spin-slow 20s linear infinite;
+	}
+
+	.animate-fade-in {
+		animation: fade-in 0.5s ease-out;
+	}
+
+	/* Hover effects */
+	.hover-lift {
+		transition:
+			transform 0.3s ease,
+			box-shadow 0.3s ease;
+	}
+
+	.hover-lift:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 25px rgba(43, 43, 43, 0.15);
+	}
+
+	/* Loading skeleton */
+	.loading-skeleton {
+		background: linear-gradient(
+			90deg,
+			var(--color-background) 25%,
+			var(--color-accent) 50%,
+			var(--color-background) 75%
+		);
+		background-size: 200% 100%;
+		animation: loading-skeleton 1.5s infinite;
+	}
+}
+
+/* === KEYFRAMES === */
+@layer utilities {
+	@keyframes loading-bar {
+		0% {
+			transform: translateX(-100%);
+		}
+		100% {
+			transform: translateX(100vw);
+		}
+	}
+
+	@keyframes float {
+		0%,
+		100% {
+			transform: translateY(0px);
+		}
+		50% {
+			transform: translateY(-20px);
+		}
+	}
+
+	@keyframes letter-spacing {
+		0% {
+			letter-spacing: -0.5em;
+			opacity: 0;
+		}
+		40% {
+			letter-spacing: 0.25em;
+		}
+		100% {
+			letter-spacing: 0.15em;
+			opacity: 1;
+		}
+	}
+
+	@keyframes fade-in-up {
+		0% {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes slide-in-left {
+		0% {
+			opacity: 0;
+			transform: translateX(-30px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	@keyframes slide-in-right {
+		0% {
+			opacity: 0;
+			transform: translateX(30px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	@keyframes slide-in-up {
+		0% {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes spin-slow {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
+	@keyframes fade-in {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@keyframes loading-skeleton {
+		0% {
+			background-position: 200% 0;
+		}
+		100% {
+			background-position: -200% 0;
+		}
+	}
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--color-primary);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--color-text);
+}
+
+/* Transitions */
+* {
+	transition-property:
+		color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow,
+		transform, filter, backdrop-filter;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+}
+
+/* Selection */
+::selection {
+	background-color: var(--color-primary);
+	color: var(--color-background);
+}
+
+/* Focus */
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+/* Accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}

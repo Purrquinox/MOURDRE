@@ -1,0 +1,27 @@
+<svg width="400" height="500" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer frame -->
+  <rect x="5" y="5" width="390" height="490" rx="20" ry="20" stroke="#9A8866" stroke-width="4" fill="#F2F0EB"/>
+  
+  <!-- Inner shadow -->
+  <rect x="10" y="10" width="380" height="480" rx="16" ry="16" fill="url(#fabricTexture)"/>
+  
+  <!-- Fabric texture pattern -->
+  <defs>
+    <pattern id="fabricTexture" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(45)">
+      <rect width="2" height="10" fill="#D2B6C9" opacity="0.1"/>
+      <rect x="4" width="2" height="10" fill="#D2B6C9" opacity="0.1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Placeholder icon: folded blazer silhouette -->
+  <path d="M140 380 L170 120 L230 120 L260 380 Z" fill="#678D58" opacity="0.8" stroke="#9A8866" stroke-width="3" rx="8" ry="8"/>
+  <path d="M200 120 L200 380" stroke="#9A8866" stroke-width="4" stroke-linecap="round"/>
+  <path d="M180 150 L220 150" stroke="#9A8866" stroke-width="3" stroke-linecap="round"/>
+  <path d="M180 200 L220 200" stroke="#9A8866" stroke-width="3" stroke-linecap="round"/>
+  <path d="M180 250 L220 250" stroke="#9A8866" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Text placeholder -->
+  <text x="200" y="460" fill="#9A8866" font-family="Tiempos, serif" font-size="22" font-weight="600" text-anchor="middle" letter-spacing="2" opacity="0.7">
+    PRODUCT IMAGE
+  </text>
+</svg>
