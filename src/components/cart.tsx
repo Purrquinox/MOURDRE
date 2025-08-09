@@ -4,7 +4,7 @@ import { useCart } from '@/context/cart-context';
 import { useEffect } from 'react';
 import Image from 'next/image';
 
-export default function Cart() {
+const Cart = () => {
 	const { state, dispatch } = useCart();
 
 	useEffect(() => {
@@ -144,4 +144,6 @@ export default function Cart() {
 			</div>
 		</>
 	);
-}
+};
+
+export default Cart;

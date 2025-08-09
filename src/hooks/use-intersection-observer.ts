@@ -8,11 +8,11 @@ interface UseIntersectionObserverProps {
 	triggerOnce?: boolean;
 }
 
-export function useIntersectionObserver({
+export const useIntersectionObserver = ({
 	threshold = 0.1,
 	rootMargin = '0px',
 	triggerOnce = true
-}: UseIntersectionObserverProps = {}) {
+}: UseIntersectionObserverProps = {}) => {
 	const [isIntersecting, setIsIntersecting] = useState(false);
 	const [hasTriggered, setHasTriggered] = useState(false);
 	const ref = useRef<HTMLElement>(null);
@@ -45,4 +45,4 @@ export function useIntersectionObserver({
 	}, [threshold, rootMargin, triggerOnce, hasTriggered]);
 
 	return { ref, isIntersecting };
-}
+};

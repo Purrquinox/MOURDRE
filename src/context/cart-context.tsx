@@ -53,7 +53,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
 	}
 };
 
-export function CartProvider({ children }: { children: ReactNode }) {
+export const CartProvider = ({ children }: { children: ReactNode }) => {
 	const [state, dispatch] = useReducer(cartReducer, {
 		items: [],
 		isOpen: false,
@@ -61,7 +61,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 	});
 
 	return <CartContext.Provider value={{ state, dispatch }}>{children}</CartContext.Provider>;
-}
+};
 
 export const useCart = () => {
 	const context = useContext(CartContext);

@@ -3,8 +3,14 @@ import FeaturedCollection from '@/components/featured-collection';
 import Story from '@/components/story';
 import Newsletter from '@/components/newsletter';
 import Gallery from '@/components/gallery';
+import { Metadata } from 'next';
 
-export default function Home() {
+export const metadata: Metadata = {
+	title: 'MOURDRÉ by Purrquinox',
+	description: 'Luxury garments website prototype by Purrquinox.'
+};
+
+const Home = () => {
 	return (
 		<>
 			<Hero />
@@ -14,4 +20,6 @@ export default function Home() {
 			<Newsletter />
 		</>
 	);
-}
+};
+
+export default Home;

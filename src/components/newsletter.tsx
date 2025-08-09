@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 
-export default function Newsletter() {
+const Newsletter = () => {
 	const [email, setEmail] = useState('');
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [isSubmitted, setIsSubmitted] = useState(false);
@@ -116,4 +116,6 @@ export default function Newsletter() {
 			</div>
 		</section>
 	);
-}
+};
+
+export default Newsletter;

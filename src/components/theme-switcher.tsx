@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useTheme, ColorScheme } from '@/context/theme-context';
 
-export default function ThemeSwitcher() {
+const ThemeSwitcher = () => {
 	const { colorScheme, mode, setColorScheme, toggleMode } = useTheme();
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -108,4 +108,6 @@ export default function ThemeSwitcher() {
 			</button>
 		</div>
 	);
-}
+};
+
+export default ThemeSwitcher;

@@ -173,7 +173,7 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 	const [colorScheme, setColorScheme] = useState<ColorScheme>('original');
 	const [mode, setMode] = useState<Mode>('light');
 
@@ -227,7 +227,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 			{children}
 		</ThemeContext.Provider>
 	);
-}
+};
 
 export const useTheme = () => {
 	const context = useContext(ThemeContext);

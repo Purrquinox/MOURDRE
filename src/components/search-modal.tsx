@@ -15,7 +15,7 @@ const searchResults = [
 	{ id: 5, name: 'Pearl Necklace', category: 'Jewelry', price: '$850' }
 ];
 
-export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
+const SearchModal = ({ isOpen, onClose }: SearchModalProps) => {
 	const [query, setQuery] = useState('');
 	const [filteredResults, setFilteredResults] = useState(searchResults);
 
@@ -136,4 +136,6 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
 			</div>
 		</>
 	);
-}
+};
+
+export default SearchModal;

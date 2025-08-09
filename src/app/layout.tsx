@@ -25,10 +25,10 @@ const crimsonText = Crimson_Text({
 
 export const metadata: Metadata = {
 	title: 'MOURDRÉ - Worn once. Forever yours.',
-	description: 'Luxury garments salvaged from lost moments'
+	description: 'Luxury garments website prototype by Purrquinox.'
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<html lang="en" className={`${inter.variable} ${crimsonText.variable}`}>
 			<body
@@ -48,4 +48,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			</body>
 		</html>
 	);
-}
+};
+
+export default RootLayout;

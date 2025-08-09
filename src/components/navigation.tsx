@@ -7,7 +7,7 @@ import { useTheme } from '@/context/theme-context';
 import Cart from './cart';
 import SearchModal from './search-modal';
 
-export default function Navigation() {
+const Navigation = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -194,4 +194,6 @@ export default function Navigation() {
 			<SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
 		</>
 	);
-}
+};
+
+export default Navigation;

@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 
-export default function Story() {
+const Story = () => {
 	const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.3 });
 
 	return (
@@ -105,4 +105,6 @@ export default function Story() {
 			</div>
 		</section>
 	);
-}
+};
+
+export default Story;

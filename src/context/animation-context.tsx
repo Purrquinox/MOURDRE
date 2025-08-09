@@ -8,7 +8,7 @@ const AnimationContext = createContext<{
 	prefersReducedMotion: false
 });
 
-export function AnimationProvider({ children }: { children: React.ReactNode }) {
+export const AnimationProvider = ({ children }: { children: React.ReactNode }) => {
 	const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
 	useEffect(() => {
@@ -26,6 +26,6 @@ export function AnimationProvider({ children }: { children: React.ReactNode }) {
 			{children}
 		</AnimationContext.Provider>
 	);
-}
+};
 
 export const useAnimation = () => useContext(AnimationContext);

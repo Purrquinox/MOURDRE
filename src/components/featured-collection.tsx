@@ -35,7 +35,7 @@ const featuredItems = [
 	}
 ];
 
-export default function FeaturedCollection() {
+const FeaturedCollection = () => {
 	const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.2 });
 	const { dispatch } = useCart();
 	const [selectedSizes, setSelectedSizes] = useState<{ [key: number]: string }>({});
@@ -196,4 +196,6 @@ export default function FeaturedCollection() {
 			</div>
 		</section>
 	);
-}
+};
+
+export default FeaturedCollection;

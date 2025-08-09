@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 
-export default function Footer() {
+const Footer = () => {
 	const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.3 });
 
 	return (
@@ -133,4 +133,6 @@ export default function Footer() {
 			</div>
 		</footer>
 	);
-}
+};
+
+export default Footer;

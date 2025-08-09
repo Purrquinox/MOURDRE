@@ -3,7 +3,7 @@
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 import { useEffect, useState } from 'react';
 
-export default function Hero() {
+const Hero = () => {
 	const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.3 });
 	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -191,20 +191,8 @@ export default function Hero() {
 					</button>
 				</div>
 			</div>
-
-			{/* Scroll Indicator */}
-			<div
-				className={`absolute bottom-8 left-1/2 z-10 -translate-x-1/2 transform transition-all delay-1000 duration-1000 ${
-					isIntersecting ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-				}`}
-			>
-				<div className="flex flex-col items-center space-y-4">
-					<div className="bg-theme-primary/50 h-16 w-px animate-pulse"></div>
-					<p className="text-theme-textSecondary origin-center rotate-90 transform animate-bounce text-xs tracking-widest">
-						SCROLL
-					</p>
-				</div>
-			</div>
 		</section>
 	);
-}
+};
+
+export default Hero;

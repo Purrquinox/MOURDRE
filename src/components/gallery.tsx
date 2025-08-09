@@ -32,7 +32,7 @@ const galleryImages = [
 	}
 ];
 
-export default function Gallery() {
+const Gallery = () => {
 	const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.2 });
 	const [selectedCategory, setSelectedCategory] = useState('All');
 	const [hoveredImage, setHoveredImage] = useState<number | null>(null);
@@ -136,4 +136,6 @@ export default function Gallery() {
 			</div>
 		</section>
 	);
-}
+};
+
+export default Gallery;

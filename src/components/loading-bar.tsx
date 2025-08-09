@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 
-export default function LoadingBar() {
+const LoadingBar = () => {
 	const [loading, setLoading] = useState(false);
 	const pathname = usePathname();
 
@@ -20,4 +20,6 @@ export default function LoadingBar() {
 			<div className="bg-oxidized-brass animate-loading-bar h-full"></div>
 		</div>
 	);
-}
+};
+
+export default LoadingBar;
